@@ -34,7 +34,7 @@ Now that you have sensors running, we need a way to do something useful with tha
 
 Now, build the flow in the image above to proceed… Just kidding! And don’t worry… this isn’t as bad as it looks. The packages you installed provide a few different pieces of functionality, as detailed here, but you can learn more about each by adding one of the nodes it provides to a flow and viewing its info tab. Assuming at this point you’ve started up Node-RED, you should be able to open a browser and navigate to http://localhost:1880, this will open up the flow builder that is the heart of the Node-RED experience.
 
-**Steps**
+**Steps to build the flow**
 
 - **At this point you’ll be viewing a large blank flow with a long list of nodes on the left hand side, this sidebar is called the palette.**
 
