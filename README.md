@@ -83,9 +83,14 @@ You are now collecting data from your wireless sensors, and outputting it to the
 For the purposes of this tutorial, we want to separate wireless sensor data locally so that we can display it, we could use a switch node to split out the messages from the gateway based on the mac address or sensor type, but as I mentioned, the Wireless Nodes actually contain additional functionality for configuring the sensors, so we’ll start with them to give you a more complete picture of how these systems can work. If you haven’t already seen packets coming in from both of your sensors, go ahead and hit the reset button on the one that hasn’t reported. When a sensor checks in through any Serial Device configuration node, the mac address and type of sensor is cached in a pool so we can quickly find it during this next step. 
 
 - **Grab a Wireless Node from the palette and drag it onto the flow, double click on it to get it configured**
+
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/wirelessdevice.JPG)
+
 - ** select the serial device from the drop down that you used for the Wireless Gateway, now click the magnifying glass next to “Mac Address” and select one of the available options.
 
-![alt tag]()
+- ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/wirelessdevice1.JPG)
+
+- ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/wirelessdevice2.JPG)
 
 You’ll notice this automatically sets the sensor type for you, you can also give it a name to make it easier to identify. As noted in the info tab, the Serial Device for Config field is optional, and we won’t worry about it right now. The node you have just added effectively works as a filter on incoming sensor data, only passing through data for the mac address, or sensor type if no mac address is present.
 # Displaying up the Temperature/Humidity
@@ -93,30 +98,34 @@ You’ll notice this automatically sets the sensor type for you, you can also gi
 These nodes for the wireless sensors output a msg object with all of the same information as the Wireless Gateway node, just in a slightly different format, the Sensor Data itself is sent in the msg.payload, which is what most nodes use to interact with the msg itself. 
 
 - **Grab a “split” node from the palette, and place it to the right of the Temp/Hum node
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/split.JPG)
 
 -**double click and check the box under Object that says “Copy key to”, this will split the msg into multiple objects, one for each property in the payload, and set the topics for those new msgs to the property names.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/split1.JPG)
 
 - **Now add a “switch” node, this will allow us to send each msg to a specific part of the flow, one to handle temperature, and one humidity. In the first field change “payload” to “topic”, next to the “==”, type “temperature”
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/switch.JPG)
 
 -**then click the “+add” button at the bottom left, in the new field type “humidity”. As you can see each of these has a unique number to the right, this number indicates which output the msg will be sent to when it matches the condition.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/switch1.JPG)
 
 - **Next let’s add a “gauge” from the palette**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gauge.JPG)
 
 - **set the Label to “Temperature”, and the Value format to “{{value | number:2}}”, and the Units to “Celsius” you can alter the range to the minimum and maximum expected temperature, I’m using 0 and 50.**
 
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gauge1.JPG)
+
 Another really cool feature of the flow builder is copy+paste, click on the gauge you just added and click ctrl+c (cmd+c on mac), then cntl+v, now you have a second gauge, double click on it to change the Label to Humidity, the Units to RH, and the range to 20 and 80.
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gauge2.JPG)
 
 - **Now draw wires from the Temperature/Humidity node to the split node, from the split node to the switch node, and from the switch node’s first (top) output to the temperature gauge node, and from the switch node’s second output to the humidity gauge.**
+
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/wnode.JPG)
 
 Once that’s done click deploy. 
 
@@ -124,11 +133,11 @@ Once that’s done click deploy.
 Provides the ability to create a UI using the flow builder, provides charts, graphs, and a number of other visual elements we can use to display data, along with nodes to trigger a flow using user input. We will use some of these nodes to display the telemetry from your wireless sensors.
 
 - **let’s check it out! There is a tab on the top right that says “Dashboard”**
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/Dashboard1.JPG)
 
 - **on the top right of that tab is the little “new window” icon, click on it to view your UI.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/Dashboard2.JPG)
 
 It is likely that the gauges aren’t displaying any information, because no sensor data has been reported since you deployed the flow, click the reset button on your temperature/humidity sensor to force it to check in and your gauges should jump up. You should now have real time data displaying!
 
