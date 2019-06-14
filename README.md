@@ -38,15 +38,15 @@ Now, build the flow in the image above to proceed… Just kidding! And don’t w
 
 - **At this point you’ll be viewing a large blank flow with a long list of nodes on the left hand side, this sidebar is called the palette.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/blank_page.JPG)
 
 - **At the top of the palette is a search box, if you type “ncd”, the nodes available will be filtered down to those we provided through the ncd-red-wireless package.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/ncd.JPG)
 
 - **Go ahead and drag a Wireless Gateway node over to your flow canvas to get started.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gateway.JPG)
 
 - **ncd-red-wireless**
 Provides the nodes that manage the serial connection, parse incoming sensor data, filter it by specific parameters, and allow you to configure the wireless sensors.
@@ -56,27 +56,27 @@ Once you’ve added the node you’ll be able to view the info tab, which contai
 
 - **Double click on the node to open up the configuration options.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gateway1.JPG)
 
 - **Click on the pencil icon next to the Serial Device field to configure your USB router, this will open a second configuration panel that only has a few options.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gateway2.JPG)
 
 - **Click on the magnifying glass next to the Serial Port field and select the port that corresponds with your router, then click the “Add” button on top. The Serial Device field will now be populated based on that selection, and you can click “Done”, you now have direct access to your wireless sensors! To view the data coming in.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gateway3.JPG)
 
 - **Now go back to your palette and type “debug” into the search field at the top, grab one of these nodes and drag it to the right of your Wireless Gateway**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/debug.JPG)
 
 - **Double click on it and change “msg.” to “complete msg object” click done**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/debug2.JPG)
 
 - **Now draw a line between the two nodes, and click “Deploy” on the top right of the window..**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/deploy.JPG)
 
 # Working with the data
 You are now collecting data from your wireless sensors, and outputting it to the “debug” tab, this is located in the right sidebar next to the info tab. Clicking the reset button on one of your sensors should force an update and you can see the data come in. In Node-RED data is passed between nodes in a JSON packet, if you are unfamiliar with JSON, it is simply an object notation that was originally used for Javascript, and has since been adopted as a standard across many APIs for it’s simplicity and flexibility. When the msg object comes in to the debug tab you can expand it to view the full list of information that comes with it. This is extremely helpful if you need to quickly see which sensors are checking in, or if you simply want to push all incoming data up to a cloud service and handle the aggregation and data manipulation there. The other thing this node provides is a simple way to switch your router to the network ID that devices in configuration mode report on, simply click the button on the left of the node and the device will switch to the configuration network, click it again to return it to listening mode. Once we get the Wireless Device nodes set up, they can be set to automatically configure a sensor when it enters configuration mode, so it’s always handy to keep one of these Gateway nodes present on the flow for quickly configuring a device.
