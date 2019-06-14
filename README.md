@@ -38,7 +38,7 @@ Now, build the flow in the image above to proceed… Just kidding! And don’t w
 
 - **At this point you’ll be viewing a large blank flow with a long list of nodes on the left hand side, this sidebar is called the palette.**
 
-![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/blank_page.JPG)
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/blankpage.JPG)
 
 - **Go ahead and drag a Wireless Gateway node over to your flow canvas to get started.**
 
@@ -109,7 +109,7 @@ These nodes for the wireless sensors output a msg object with all of the same in
 
 -**then click the “+add” button at the bottom left, in the new field type “humidity”. As you can see each of these has a unique number to the right, this number indicates which output the msg will be sent to when it matches the condition.**
 
-![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/switch1.JPG)
+![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/switchhhhh.JPG)
 
 - **Next let’s add a “gauge” from the palette**
 
