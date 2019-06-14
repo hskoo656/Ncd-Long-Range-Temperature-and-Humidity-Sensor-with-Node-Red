@@ -40,10 +40,6 @@ Now, build the flow in the image above to proceed… Just kidding! And don’t w
 
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/blank_page.JPG)
 
-- **At the top of the palette is a search box, if you type “ncd”, the nodes available will be filtered down to those we provided through the ncd-red-wireless package.**
-
-![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/ncd.JPG)
-
 - **Go ahead and drag a Wireless Gateway node over to your flow canvas to get started.**
 
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/gateway.JPG)
