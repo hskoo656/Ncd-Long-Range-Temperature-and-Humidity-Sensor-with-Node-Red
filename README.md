@@ -1,11 +1,11 @@
 # Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red
 
-We will be using a Temperature/Humidity Sensor for this case, but the steps remain basically the same for any of the product line, so if you have different Ncd Wireless Sensors, feel free to follow along anyway. By the end of this article you should have a solid understanding of how to set up the sensors, configure node-red, and visualize the data on a dashboard like the one pictured here.
+We will be using a Temperature/Humidity Sensor for this case, but the steps remain basically the same for any of the ** NCD ** product , so if you have different Ncd Wireless Sensors, feel free to follow along anyway. By the end of this article you should have a solid knowledge of how to set up the sensors, configure node-red, and see the data on a dashboard like the one pictured here.
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-range-Temperature-and-Humidity-sensor/blob/master/IoT-Wireless-Temperature-Humidity-600x400.png)
 # IoT Long Range Wireless Temperature and Humidity  Sensor
 Introducing NCD’s long-range wireless temperature humidity sensor, boasting up to a 28 Mile range using a wireless mesh networking architecture.  Incorporating the Honeywell HIH9130 temperature humidity sensor, transmits highly accurate temperature and humidity samples at user-defined intervals.
 
-The on-board temperature sensor is rated for -25°C to 85°C or -13°F to 185°F and the humidity sensor is rated for 0 to 100% RH.  Powered by just 2 AA batteries and an operational lifetime of 500,000 wireless transmissions, a 10 years battery life can be expected depending on environmental conditions and the data transmission interval.  Optionally, this sensor may be externally powered.
+The on-board temperature sensor is rated for -25°C to 85°C or -13°F to 185°F and the humidity sensor is rated for 0 to 100% RH. It can be powered by just 2 AA batteries and an operational lifetime of 500,000 wireless transmissions.Battery life can be extended upto 10 years depending on environmental conditions and the data transmission interval.  Optionally, this sensor may be externally powered.
 
 With an open communication protocol this IoT wireless temperature humidity product can be integrated with just about any control system or gateway.  Data can be transmitted to a PC, a Raspberry Pi, to Microsoft Azure® IoT, or Arduino. Sensor parameters and wireless transmission settings can be changed on the go using the open communication protocol providing maximum configurability depending on the intended application.
 
@@ -16,9 +16,6 @@ The long range, price, accuracy, battery life and security features of Long Rang
 - **Zigmo Wireless Communication**
 Mesh Networking is simply the hottest wireless technology of our time. Period. It’s fast, it’s very easy to use, highly reliable, and self healing. Three components are required for the ZigBee Mesh Network, the Coordinator (C), the Router (R) and the Endpoint (E). Your computer can speak to a ZigBee Mesh Network using a Coordinator. Think of the Coordinator as the interface to a ZigBee Mesh Network. NCD Coordinators are equipped with a USB Interface. This ZigBee Coordinator mounts as a Serial Port on your computer, and you will develop software that sends Serial commands at 115.2K Baud. The primary job of a router is to bridge the wireless gap between your computer (the Coordinator) and the device (Endpoint). If the Coordinator cannot speak to the Endpoint device because it is out of range, a Router can be used to bridge the two devices together. Endpoints are simply devices. With regard to NCD products, Endpoints can be relay controllers, data collection devices, PWM devices, and much more.
 
-- **USB Wireless Mesh Modem**
-Your computer can speaks to a ZB ZigBee Network using a Coordinator.  Think of the Coordinator as the interface to a ZB ZigBee Network.  NCD ZigBee Coordinators are equipped with a USB Interface.  USB Coordinators mount as a Serial Port on your computer, and you will develop software that sends Serial commands at 115.2K Baud.  Only ONE Coordinator should be installed within a wireless ZB ZigBee Network.  Two types of Coordinators are available.  AT and API.  Normally, AT coordinators are used.  AT coordinators use Terminal-like AT commands to speak to a ZB ZigBee Network.  They are easier to use than an API coordinator.  An API coordinator uses a string of carefully chosen bytes and checksums to communicate data to a ZigBee networking.  API coordinators are harder to use, but can communicate and switch between devices much faster.  This page will introduce you to AT coordinators.  You can choose between AT and API firmware at checkout.
-
 # Setting up Node-Red.
 The sensor and Zigmo/Router come pre-programmed and work out of the box. In this section we will setup a sensor and Zigmo link and start receiving data on our PC.
 
@@ -26,8 +23,11 @@ The sensor and Zigmo/Router come pre-programmed and work out of the box. In this
 - [IoT Long Range Wireless Temperature Humidity Sensor](https://store.ncd.io/product/industrial-long-range-wireless-temperature-humidity-sensor/) with power source Battery Or External DC.
 - [Zigmo/Router for PC](https://store.ncd.io/product/900hp-s3b-long-range-wireless-mesh-modem-with-usb-interface/)
 - PC/Laptop with an OS installed or Any IoT Embedded Device
-
-Now that you have sensors running, we need a way to do something useful with that data. In the past your options tended to be either A) Hire a developer, or B) Use some proprietary software that probably costs additional money on top of the hardware you’ve already purchased. Our dislike of these options is largely what led us to start building for Node-RED. If you’ve never used it before, I have great news! It’s free, open source, and simple. It works on Windows, Linux and Mac, and is constantly being developed and improved. Seeing no need to reinvent the wheel, I’ll point you to the excellent documentation already available for [Installing Node-RED](https://nodered.org/docs/getting-started/installation). Once that’s done, you’ll need to enter your command line, or Power Shell for Windows users, navigate to the directory Node-RED is installed in, and type “npm i ncd-red-wireless node-red-dashboard“. This will install the nodes required to receive data from your wireless sensors and you can start Node-RED once this is done.
+# Steps to install NODE-RED
+Now that you have sensors running, we need a way to do something useful with that data.
+- First of all you'll have to install [Node-RED](https://nodered.org/docs/getting-started/installation). 
+- Once that’s done, you’ll need to enter your command line, or Power Shell for Windows users, navigate to the directory Node-RED is installed in.
+- Now type **“npm i ncd-red-wireless node-red-dashboard“**. This will install the nodes required to receive data from your wireless sensors and you can start Node-RED once this is done.
 
 # Setting up the nodes
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/wnode.JPG)
@@ -86,7 +86,7 @@ For the purposes of this tutorial, we want to separate wireless sensor data loca
 
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/wirelessdevice.JPG)
 
-- ** select the serial device from the drop down that you used for the Wireless Gateway, now click the magnifying glass next to “Mac Address” and select one of the available options.**
+- **select the serial device from the drop down that you used for the Wireless Gateway, now click the magnifying glass next to “Mac Address” and select one of the available options.**
 
 - ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/wirelessdevice1.JPG)
 
