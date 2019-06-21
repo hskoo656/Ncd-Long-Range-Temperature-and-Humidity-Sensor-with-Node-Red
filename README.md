@@ -97,17 +97,17 @@ You’ll notice this automatically sets the sensor type for you, you can also gi
 
 These nodes for the wireless sensors output a msg object with all of the same information as the Wireless Gateway node, just in a slightly different format, the Sensor Data itself is sent in the msg.payload, which is what most nodes use to interact with the msg itself. 
 
-- **Grab a “split” node from the palette, and place it to the right of the Temp/Hum node
+- **Grab a “split” node from the palette, and place it to the right of the Temp/Hum node.**
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/split.JPG)
 
--**double click and check the box under Object that says “Copy key to”, this will split the msg into multiple objects, one for each property in the payload, and set the topics for those new msgs to the property names.**
+- **double click and check the box under Object that says “Copy key to”, this will split the msg into multiple objects, one for each property in the payload, and set the topics for those new msgs to the property names.**
 
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/split1.JPG)
 
-- **Now add a “switch” node, this will allow us to send each msg to a specific part of the flow, one to handle temperature, and one humidity. In the first field change “payload” to “topic”, next to the “==”, type “temperature”
+- **Now add a “switch” node, this will allow us to send each msg to a specific part of the flow, one to handle temperature, and one humidity. In the first field change “payload” to “topic”, next to the “==”, type “temperature”.**
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/switch.JPG)
 
--**then click the “+add” button at the bottom left, in the new field type “humidity”. As you can see each of these has a unique number to the right, this number indicates which output the msg will be sent to when it matches the condition.**
+- **then click the “+add” button at the bottom left, in the new field type “humidity”. As you can see each of these has a unique number to the right, this number indicates which output the msg will be sent to when it matches the condition.**
 
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/switchhhhh.JPG)
 
