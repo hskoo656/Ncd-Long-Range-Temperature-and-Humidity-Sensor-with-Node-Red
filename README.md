@@ -1,6 +1,6 @@
 # Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red
 
-We are able to be using a temperature/humidity sensor for this example, but the steps stay the equal for any of the **ncd** product, so if you have other ncd wireless sensors, experience free to observe alongside besides. By means of the stop of this text, you need to have a stable understanding of how to set up the sensors, configure node-red, and see the data on a dashboard like the one pictured right here.
+We are using here NCD's Temperature and Humidity sensor, but the steps stay the equal for any of the **ncd** product, so if you have other ncd wireless sensors, experience free to observe alongside besides. By means of the stop of this text, you need to have a stable understanding of how to set up the sensors, configure node-red, and see the data on a dashboard like the one pictured right here.
 
 ![alt tag](https://github.com/rjrajbir/Ncd-Long-range-Temperature-and-Humidity-sensor/blob/master/IoT-Wireless-Temperature-Humidity-600x400.png)
 # IoT Long Range Wireless Temperature and Humidity  Sensor
