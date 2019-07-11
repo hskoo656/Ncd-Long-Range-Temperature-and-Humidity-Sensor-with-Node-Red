@@ -40,7 +40,7 @@ Now, start building the flow in the image above to proceed… Just kidding! And 
 
 - **At this point you’ll be viewing a large blank flow with a long list of nodes on the left hand side, this sidebar is called the palette.**
 
-![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/blankpage.JPG)
+![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/blankpage.JPG)
 
 - **Go ahead and drag a Wireless Gateway node over to your flow canvas to get started.**
 
@@ -79,7 +79,7 @@ Once you’ve added the node you’ll be able to view the info tab, which contai
 # Working with the data
 Now out of your wireless sensors data is gathered and it is output to the “debug” tab, this "debug tab" is placed within the right sidebar subsequent to the information tab. To see the information are available in to hit the reset button. In node-red records is surpassed among nodes in a json packet. When the msg object comes into the debug tab you may make bigger it to view the overall list of information that comes with it. This is extraordinarily useful in case you need to quickly see which sensors are checking in. The other issue this node gives is a easy way to interchange your router to the network identity that devices in configuration mode document on, simply hit the button on the left of the node and the tool will switch to the configuration network, hit it once more to return it to listening mode. Once we get the wi-fi tool nodes set up, they may be set to routinely configure a sensor whilst it enters configuration mode, so it’s always available to maintain such a gateway nodes present at the flow for speedy configuring a device.
 
-![alt tag](https://github.com/rjrajbir/Ncd-Long-Range-Temperature-and-Pressure-Sensor-with-Node-Red/blob/master/GatewayJson.png)
+![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/GatewayJson.png)
 
 # Adding the wireless sensors
 we need to separate wireless sensor records domestically in order that we are able to display it, we could use a switch node to split out the messages from the gateway based totally on the mac address with or sensor type, but as i referred to, the wireless nodes truly incorporate extra functionality for configuring the sensors, so we’ll start with them to give you a extra entire image of how those structures can work. In case you haven’t already seen packets coming in from both of your sensors, cross in advance and hit the reset button on the only that hasn’t stated. While a sensor assessments in thru any serial device configuration node, the mac address and kind of sensor is cached in a pool so we are able to quick find it for the duration of this next step.
